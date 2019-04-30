@@ -1,0 +1,6 @@
+Prerequisites:
+    Python and pip is installed on environment
+    internet connection is available (for installing required python dependencies)
+
+Optional:
+    Docker installed (can optionally create and run in container)

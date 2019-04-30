@@ -1,0 +1,8 @@
+Scaling notes:
+    Many docker containers can be used to process data. The processing will then be distributed, but someone first has to assign which data gets processed inside which container. This can be automated if needed.
+    At the moment, one container is sufficient.
+    DataFrames (python pandas library) is not suggested for Big data, but we are working with less than 1000 records (15), so i believe it is a good fit for the current need.
+    CSVs can be processed in chunks if CSV files contain to many records.
+    Dataframes caters for any additional columns. So if new columns get added over time, the solution will not need to change.
+    
+

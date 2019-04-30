@@ -1,0 +1,21 @@
+Option 1: Run in on local machine with python virtual environment
+    run: python3 -m venv venv
+    run: source venv/bin/activate
+    run: pip install -r requirements.txt
+    run: python process_sales.py (if using conda, use pythonw instead of python/python3)
+
+Option 2: Run in docker container
+    start docker
+    run: cd <path to Jumo_Solution unarchived directory>
+    run: docker build -t python-jumo . (this could take a few minutes. needs to download dependencies)
+
+    Option 2A: run as interactive
+        run: docker run -i -t python-jumo /bin/bash
+        run: python process_sales.py
+        run: cd SalesProcessing/Data/Output/
+        run: cat <filename.csv> (all_sales_data.csv, sales_per_network_report.csv, sales_per_region_report.csv)
+
+    Option 2B: run as an executable
+        run: docker run -t python-jumo
+
+Matplotlib graphs are stored in the Output directory for easier analysis.
