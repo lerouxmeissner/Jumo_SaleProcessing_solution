@@ -31,9 +31,13 @@ Optional:
   Matplotlib graphs are stored in the Output directory for easier analysis.
   
 <b>Assumptions:</b>
+
     'Sales' directory will be cleared once data is processed. I purposely don't clear it in my solution because i need the data to demonstrate that the program keeps adding the new data to the output(because the data is streamed to the sales directory).
+    
     If no new data is added to the 'Sales' directory, it will keep adding the same data to the output.
+    
     The reports in the 'Output' directory is stored daily, and the file name contains the date. all data processed on the same day will be in the same output file.
+    
     SalesProcessing.zip will be unarchived in the same directory as process_sales.py,so directory structure will be:
        |-SalesProcessing
          |-Data
@@ -53,9 +57,13 @@ Optional:
     More files can be added to 'Sales' directory.
     The name of the region_csv will remain constant.
     
-<b>Scaling notes:<b>
+<b>Scaling notes:</b>
+
     Many docker containers can be used to process data. The processing will then be distributed, but someone first has to assign which data gets processed inside which container. This can be automated if needed.
+    
     At the moment, one container is sufficient.
     DataFrames (python pandas library) is not suggested for Big data, but we are working with less than 1000 records (15), so i believe it is a good fit for the current need.
+    
     CSVs can be processed in chunks if CSV files contain to many records.
+    
     Dataframes caters for any additional columns. So if new columns get added over time, the solution will not need to change.
